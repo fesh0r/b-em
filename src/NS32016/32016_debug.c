@@ -58,6 +58,10 @@ static const char *dbg_reg_names[] = {
    NULL
 };
 
+// NULL pointer terminated list of trap names.
+static const char *dbg_trap_names[] = {
+   NULL
+};
 
 // enable/disable debugging on this CPU, returns previous value.
 static int dbg_debug_enable(int newvalue) {
@@ -226,6 +230,7 @@ cpu_debug_t n32016_cpu_debug = {
    .reg_print      = dbg_reg_print,
    .reg_parse      = dbg_reg_parse,
    .get_instr_addr = dbg_get_instr_addr,
+   .trap_names     = dbg_trap_names,
    .print_addr     = debug_print_addr32,
    .parse_addr     = debug_parse_addr
 };
