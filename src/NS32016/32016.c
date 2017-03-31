@@ -15,6 +15,7 @@
 #include "Trap.h"
 #include "Decode.h"
 #include "../tube-ula.h"
+#include "../tube.h"
 
 #ifdef PROFILING
 #include "Profile.h"
@@ -1017,10 +1018,9 @@ void n32016_exec()
       TakeInterrupt(intbase);
    }
 
-   while (tubecycles > 0)
-   {
-      tubecycles -= 8;
-
+   
+   do {
+      tubeUseCycles(8);
       CLEAR_TRAP();
 
       WriteSize      = szVaries;                                            // The size a result may be written as
@@ -3069,5 +3069,5 @@ void n32016_exec()
       {
          GOTO_TRAP(TraceTrap);
       }
-   }
+   }while (tubeContinueRunning());
 }
