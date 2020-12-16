@@ -504,6 +504,8 @@ void n32016_show_instruction(uint32_t StartPc, uint32_t* pPC, uint32_t opcode, u
             default:
                AddInstructionText(Function, opcode, OperandSize->Op[0]);
          }
+
+
          switch (Function)
          {
             case ADDQ:
