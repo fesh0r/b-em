@@ -864,5 +864,5 @@ uint32_t n32016_disassemble(cpu_debug_t *cpu, uint32_t address, char *buf, size_
    }
    //ShowTraps();
    //CLEAR_TRAP();
-   return addr;
+   return address;
 }
