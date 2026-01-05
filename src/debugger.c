@@ -260,7 +260,7 @@ static void debug_outf(const char *fmt, ...)
 LRESULT CALLBACK DebugWindowProcedure (HWND, UINT, WPARAM, LPARAM);
 static HINSTANCE hinst;
 
-BOOL CtrlHandler(DWORD fdwCtrlType)
+BOOL WINAPI CtrlHandler(DWORD fdwCtrlType)
 {
     set_quit();
     return TRUE;

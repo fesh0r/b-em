@@ -25,7 +25,6 @@ extern void mem_romsetup_bp128(void);
 extern void mem_romsetup_master(void);
 extern void mem_romsetup_compact(void);
 extern void mem_romsetup_weramrom(void);
-extern void mem_fillswram(void);
 extern int mem_findswram(int n);
 extern void mem_clearroms(void);
 
@@ -35,7 +34,6 @@ const uint8_t *mem_romdetail(int slot);
 void mem_save_romcfg(const char *sect);
 
 void mem_init(void);
-void mem_reset(void);
 void mem_close(void);
 
 void mem_savezlib(ZFILE *zfp);

@@ -5,6 +5,11 @@
 #include <errno.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdbool.h>
+#include <stdarg.h>
+#include <time.h>
+#include <string.h>
+
 #include "sdf.h"
 
 #define SKEW 3
