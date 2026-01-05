@@ -11,8 +11,8 @@ void pdp11_execute();
 void pdp11_interrupt(uint8_t vec, uint8_t pri);
 void pdp11_switchmode(const bool newm);
 
-#define false  0
-#define true   1
+// #define false  0
+// #define true   1
 #define xor    ^
 
 #define ITABN 8

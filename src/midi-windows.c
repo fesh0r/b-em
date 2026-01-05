@@ -20,7 +20,7 @@ midi_dev_t Music2000Out1 = { .szDesc = "Music 2000 Out 1" };
 midi_dev_t Music2000Out2 = { .szDesc = "Music 2000 Out 2" };
 midi_dev_t Music2000Out3 = { .szDesc = "Music 2000 Out 3" };
 
-void CALLBACK MidiInProc(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD dwParam1, DWORD dwParam2) {
+void CALLBACK MidiInProc(HMIDIIN hMidiIn, UINT wMsg, DWORD_PTR dwInstance, DWORD_PTR dwParam1, DWORD dwParam2) {
 
     if (wMsg == MIM_DATA) {
         switch(dwParam1 & 0xf0) {
@@ -37,7 +37,7 @@ void CALLBACK MidiInProc(HMIDIIN hMidiIn, UINT wMsg, DWORD dwInstance, DWORD dwP
 static void MidiOpenInInternal(UINT nMidiDevice) {
     MMRESULT rv;
 
-    if ((rv = midiInOpen(&hMusic4000MidiIn, nMidiDevice, (DWORD_PTR)(void*)MidiInProc, 0, CALLBACK_FUNCTION)) == MMSYSERR_NOERROR) {
+    if ((rv = midiInOpen(&hMusic4000MidiIn, nMidiDevice, (DWORD_PTR)MidiInProc, 0, CALLBACK_FUNCTION)) == MMSYSERR_NOERROR) {
         log_info("midi-windows: starting MIDI in device #%d, %s", nMidiDevice, szMusic4000InDevName);
         midiInStart(hMusic4000MidiIn);
     }

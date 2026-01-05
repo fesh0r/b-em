@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <sys/stat.h>
 
 #include "b-em.h"
 #include "disc.h"
@@ -642,7 +643,6 @@ int sdf_load(int this_drive, const char *fn, const char *ext)
         drives[this_drive].writeprot = 1;
     }
 #ifdef linux
-#include <sys/stat.h>
     /* On linux only we check if the disc about to be loaded is already
      * loaded in the other drive.
      */
