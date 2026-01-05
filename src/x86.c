@@ -187,7 +187,7 @@ static void x86_dbg_iowrite(uint32_t addr, uint32_t value) {
 };
 
 #define MAXOPLEN 6
-int i386_dasm_one(char *buffer, uint32_t eip, int addr_size, int op_size);
+int i386_dasm_one(char *buffer, unsigned int eip, int addr_size, int op_size);
 
 static size_t dbg_print_addr(cpu_debug_t *cpu, uint32_t addr, char *buf, size_t bufsize, bool include_symbols)
 {

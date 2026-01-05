@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <setjmp.h>
+#include <stdbool.h>
 #include "pdp11.h"
 #include "../tube.h"
 #include "../copro-pdp11.h"

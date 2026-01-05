@@ -36,6 +36,10 @@
 #include "video_render.h"
 #include "vdfs.h"
 
+#ifdef HAVE_UNISTD_H
+#include <unistd.h>
+#endif
+
 #if defined(HAVE_JACK_JACK_H) || defined(HAVE_ALSA_ASOUNDLIB_H)
 #define HAVE_LINUX_MIDI
 #include "midi-linux.h"
