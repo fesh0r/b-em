@@ -1154,7 +1154,7 @@ static inline void adc_nmos(uint8_t temp)
             ah -= 10;
             ah &= 0xF;
         }
-        a = (al & 0xF) | (ah << 4);                              \
+        a = (al & 0xF) | (ah << 4);
     }
     else {
         tempw = (a + temp + (p.c ? 1 : 0));
@@ -1185,7 +1185,7 @@ static inline void sbc_nmos(uint8_t temp)
         }
         ah = (a >> 4) - (temp >> 4);
         if (hc6)
-            ah--;                       \
+            ah--;
         if ((a - (temp + (p.c ? 0 : 1))) & 0x80)
            p.n = 1;
         p.v = ((a ^ temp) & 0x80) && ((a ^ tempb) & 0x80);

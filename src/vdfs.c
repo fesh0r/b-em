@@ -755,7 +755,7 @@ static void scan_attr(vdfs_entry *ent)
     ent->attribs = attribs;
 }
 
-static const char c_esc_bin[] = "\a\b\e\f\n\r\t\v\\\"";
+static const char c_esc_bin[] = "\a\b\033\f\n\r\t\v\\\"";
 static const char c_esc_asc[] = "abefnrtv\\\"";
 
 static const char *scan_inf_start(vdfs_entry *ent, char inf_line[MAX_INF_LINE])

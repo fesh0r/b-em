@@ -61,7 +61,7 @@ void ddnoise_init(void)
         seeksmp[0][1] = smp;
         smp = find_load_wav(subdir, "seek");
         seeksmp[1][0] = smp;
-        seeksmp[1][0] = smp;
+        seeksmp[1][1] = smp;
         smp = find_load_wav(subdir, "seek2");
         seeksmp[2][0] = smp;
         seeksmp[2][1] = smp;

@@ -217,7 +217,7 @@ ALLEGRO_PATH *find_cfg_dest(const char *name, const char *ext)
             al_destroy_path(path);
         }
     }
-    return false;
+    return NULL;
 }
 
 bool is_relative_filename(const char *fn)

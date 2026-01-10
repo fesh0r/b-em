@@ -117,6 +117,7 @@ int main(int argc, char **argv)
                                 fprintf(stderr, "hdresize: unable to read geometry from %s: %s\n", dsc_fn, strerror(errno));
                                 status = 5;
                             }
+                            fclose(dsc_fp);
                         }
                         else {
                             fprintf(stderr, "hdresize: unable to open dsc file %s: %s\n", dsc_fn, strerror(errno));
