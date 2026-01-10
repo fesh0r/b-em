@@ -26,6 +26,7 @@ void log_error(const char *fmt, ...)
     fputs("sdf2imd: ERROR ", stderr);
     vfprintf(stderr, fmt, ap);
     putc('\n', stderr);
+    va_end(ap);
 }
 
 void log_warn(const char *fmt, ...)

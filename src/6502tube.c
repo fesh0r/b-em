@@ -356,7 +356,7 @@ static uint8_t read_zp_iy_turbo(uint8_t zp)
 static void write_zp_iy_turbo(uint8_t zp, uint8_t val)
 {
     uint32_t addr1 = tube_6502_readmem(zp) | (tube_6502_readmem(zp+1) << 8) | ((tube_6502_readmem(0x301+zp) & 0x03) << 16);
-    uint32_t addr2 = addr2 = addr1 + y;
+    uint32_t addr2 = addr1 + y;
     if ((addr1 & 0xFF00) ^ (addr2 & 0xFF00))
         polltime(1);
     tube_6502_writemem(addr2, val);

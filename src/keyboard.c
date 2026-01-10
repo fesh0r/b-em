@@ -902,7 +902,7 @@ static char *key_paste_chars(char *ptr, size_t len)
         if (ch != 96) {     // Unicode backtick
             if (ch == 163)  // Unicode pound sign.
                 ch = 96;    // Translate to back-tick
-            if (ch < sizeof(ascii2bbc)) {
+            if (ch < sizeof(ascii2bbc) / sizeof(uint16_t)) {
                 uint16_t bbc_keys = ascii2bbc[ch];
                 uint_least8_t vkey = bbc_keys & 0xff;
                 key_paste_add_combo(vkey, bbc_keys & A2B_SHIFT, bbc_keys & A2B_CTRL);

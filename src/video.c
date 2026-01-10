@@ -69,7 +69,7 @@ static void crtc_setreg(int reg, uint8_t val)
     else if (reg == 8)
         set_intern_dtype(vid_dtype_user);
     else if (reg == 12)
-        ttxbank = (MASTER|BPLUS) ? 0x7c00 : 0x3C00 | ((val & 0x8) << 11);
+        ttxbank = (MASTER||BPLUS) ? 0x7c00 : 0x3C00 | ((val & 0x8) << 11);
 }
 
 void crtc_write(uint16_t addr, uint8_t val)
