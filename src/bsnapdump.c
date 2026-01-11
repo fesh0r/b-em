@@ -138,7 +138,7 @@ static int zread(ZFILE *zfp, void *dest, size_t size)
                     chunk = BUFSIZ;
                 else
                     chunk = zfp->togo;
-                fprintf(stderr, "snapdump: reading %ld bytes from file\n", chunk);
+                fprintf(stderr, "snapdump: reading %zd bytes from file\n", chunk);
                 if (fread(zfp->buf, chunk, 1, zfp->fp) != 1)
                     break;
                 zfp->zs.next_in = zfp->buf;
@@ -486,7 +486,7 @@ static void small_section(const char *fn, FILE *fp, size_t size, void (*func)(co
 {
     unsigned char data[256];
     if (size > sizeof(data))
-        fprintf(stderr, "snapdump: in %s, section of %ld bytes too big\n", fn, size);
+        fprintf(stderr, "snapdump: in %s, section of %zd bytes too big\n", fn, size);
     else if (fread(data, size, 1, fp) == 1)
         func(data);
     else

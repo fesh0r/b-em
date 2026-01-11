@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
+#include <errno.h>
 
 #include "compat_wrappers.h"
 
@@ -213,7 +214,7 @@ int main(int argc, char **argv) {
 				display_trace(filename, fp);
 				fclose(fp);
 			} else {
-				fprintf(stderr, "disptrace: unable to open %s: %m\n", filename);
+				fprintf(stderr, "disptrace: unable to open %s: %s\n", filename, strerror(errno));
 				status++;
 			}
 		}
