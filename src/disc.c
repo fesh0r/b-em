@@ -138,7 +138,7 @@ static void disc_seek_common(int drive, DRIVE *dp, const char *desc, int tracks,
         if (fdc_time <= 0)
             fdc_time = 200;
         int newtrack = dp->curtrack + tracks;
-        log_debug("disc: drive %d: seek %s %+d tracks to %d, step_time=%'d, settle_time=%'d, calculated fdc_time=%'d", drive, desc, tracks, newtrack, step_time, settle_time, fdc_time);
+        log_debug("disc: drive %d: seek %s %+d tracks to %d, step_time=%d, settle_time=%d, calculated fdc_time=%d", drive, desc, tracks, newtrack, step_time, settle_time, fdc_time);
         if (newtrack < 0) {
             log_warn("disc: drive %d: attempt to seek out beyond track zero", drive);
             newtrack = 0;

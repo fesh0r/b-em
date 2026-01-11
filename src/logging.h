@@ -1,10 +1,14 @@
 #ifndef __INCLUDE_LOGGING_HEADER__
 #define __INCLUDE_LOGGING_HEADER__
 
-#if __GNUC__
+#if __clang__
 #define printflike __attribute__((format (printf, 1, 2)))
 #else
+#if __GNUC__
+#define printflike __attribute__((format (gnu_printf, 1, 2)))
+#else
 #define printflike
+#endif
 #endif
 
 extern void log_open(const char *log_fn);

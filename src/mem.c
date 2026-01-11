@@ -2,6 +2,10 @@
   ROM handling*/
 
 #include <ctype.h>
+#include <string.h>
+#include <stdio.h>
+#include <errno.h>
+
 #include "b-em.h"
 #include "6502.h"
 #include "config.h"
@@ -57,7 +61,7 @@ void mem_init()
         rom_dir = al_create_path_for_directory("roms/general");
     }
     else {
-        log_fatal("mem: unable to allocate memory for BBC Micro: %m");
+        log_fatal("mem: unable to allocate memory for BBC Micro: %s", strerror(errno));
         exit(1);
     }
 }
