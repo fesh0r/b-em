@@ -9,10 +9,14 @@
 
 #define SKEW 3
 
-#if __GNUC__
+#if __clang__
 #define printflike __attribute__((format (printf, 1, 2)))
 #else
+#if __GNUC__
+#define printflike __attribute__((format (gnu_printf, 1, 2)))
+#else
 #define printflike
+#endif
 #endif
 
 void log_error(const char *fmt, ...) printflike;

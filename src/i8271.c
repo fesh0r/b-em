@@ -98,7 +98,7 @@ void i8271_setspindown(void)
 {
     log_debug("i8271: set spindown");
     motorspin = i8271.unload_revs * 3125; /* into units of 2Mhz/128 */
-    log_debug("i8271: set motorspin=%'d", motorspin);
+    log_debug("i8271: set motorspin=%d", motorspin);
 }
 
 uint8_t i8271_read(uint16_t addr)
@@ -137,7 +137,7 @@ void i8271_seek()
 static uint32_t time_to_2Mhz(unsigned value, unsigned multiplier, const char *name)
 {
     uint32_t cycles = value * multiplier;
-    log_info("i8271: %s set to %u native units, %'u 2Mhz cycles", name, value, cycles);
+    log_info("i8271: %s set to %u native units, %u 2Mhz cycles", name, value, cycles);
     return cycles;
 }
 
