@@ -1492,7 +1492,7 @@ void debugger_do(cpu_debug_t *cpu, uint32_t addr)
 
             case 'q':
                 set_quit();
-                /* FALLTHOUGH */
+                /* FALLTHROUGH */
 
             case 'c':
                 if (*iptr)
