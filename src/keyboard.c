@@ -1210,6 +1210,7 @@ void key_paste_poll(void)
                     case VKEY_SHIFT_EVENT:
                     case VKEY_SHIFT_EVENT|1:
                         col = 0;
+                        /* FALLTHROUGH */
                     case VKEY_CTRL_EVENT:
                     case VKEY_CTRL_EVENT|1:
                         bbcmatrix[col][0] = vkey & 1;
