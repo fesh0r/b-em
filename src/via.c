@@ -239,6 +239,7 @@ uint8_t via_read(VIA *v, uint16_t addr)
                 if ((v->pcr & 0xA) != 0x2) /*Not independent interrupt for CA2*/
                    v->ifr &= ~INT_CA2;
                 via_updateIFR(v);
+                /* FALLTHROUGH */
             case ORAnh:
                 temp=v->ora & v->ddra;
                 if (v->acr & 1)

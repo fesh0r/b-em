@@ -1490,12 +1490,14 @@ void gui_allegro_event(ALLEGRO_EVENT *event)
             break;
         case IDM_JOYSTICK2:
             change_joystick(1, radio_event_with_deselect(event, joystick_index[1]));
+            break;
         case IDM_MOUSE_STICK:
             mouse_stick = !mouse_stick;
             break;
         case IDM_JOYMAP:
             joymap_index[0] = radio_event_simple(event, joymap_index[0]);
             remap_joystick(0);
+            break;
         case IDM_JOYMAP2:
             joymap_index[1] = radio_event_simple(event, joymap_index[1]);
             remap_joystick(1);

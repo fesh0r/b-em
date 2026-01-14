@@ -4658,6 +4658,7 @@ static bool vdfs_do(enum vdfs_action act, uint16_t addr)
         break;
     case VDFS_ACT_BACK:
         cmd_back();
+        break;
     case VDFS_ACT_CDIR:
         cmd_cdir(addr);
         break;
