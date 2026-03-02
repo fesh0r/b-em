@@ -14,7 +14,9 @@
 #include "defs.h"
 #include "Trap.h"
 #include "Decode.h"
+#ifndef BEM
 #include "../tube-ula.h"
+#endif
 #include "../tube.h"
 
 #ifdef PROFILING
