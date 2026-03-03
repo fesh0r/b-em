@@ -108,16 +108,18 @@ void n32016_init()
 {
    init_ram();
 }
-#if 0
-static void n32016_close()
+
+#ifdef BEM
+void n32016_close()
 {
 }
 
-static void n32016_reset()
+void n32016_reset()
 {
    n32016_reset_addr(0xF00000);
 }
 #endif
+
 void n32016_reset_addr(uint32_t StartAddress)
 {
    n32016_build_matrix();
