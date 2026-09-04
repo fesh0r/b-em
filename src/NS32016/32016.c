@@ -3068,5 +3068,10 @@ void n32016_exec()
          }
       }
 #endif
+
+      if (T_FLAG)
+      {
+         GOTO_TRAP(TraceTrap);
+      }
    }
 }
