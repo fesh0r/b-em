@@ -25,7 +25,8 @@ const char TrapText[TrapCount][40] =
    "Illegal SpecialWriting",
    "Illegal Writing Immediate",
    "Flag Instuction",
-   "Privileged Instruction"
+   "Privileged Instruction",
+   "Trace Trap"
 };
 
 void ShowTraps(void)
@@ -67,5 +68,6 @@ void n32016_dumpregs(const char* pMessage)
 
 void HandleTrap(void)
 {
+   T_FLAG = 0;
    n32016_dumpregs("HandleTrap() called");
 }
